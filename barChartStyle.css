@@ -1,0 +1,81 @@
+
+
+/* here we have two font: advent pro and Dancing pro */
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@500&family=Dancing+Script:wght@600&display=swap');
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Advent Pro', sans-serif;
+  background-color: #FFFAE1;
+  padding: 0%;
+  margin: 0%;
+}
+ul {
+  list-style-type: none;
+  padding: 5;
+  display: flex;
+  
+}
+header li {
+  float: left;
+  /* font-size: 1.2em;  pour que la taille s'adapte a l'ecran d'affichage */
+  font-size: 1.2em;
+}
+/* here I have a issue to change the #contact place  */
+#contact {
+  float: right;
+  padding: 0 15px;
+}
+
+
+/* ********** NAV BAR ************ */
+
+#deuxiemeTrait {
+  height: 10px;
+  width: 75%;
+  background-color: #FFFAE1;
+  margin: 60px auto;
+}
+#copyrightEtIcons {
+  display: flex;
+  margin-bottom: 40px;
+  padding: 0 10%;
+}
+#copyright {
+  width: 50%;
+  text-align: left;
+  color: #FFFAE1;
+}
+#icons {
+  width: 50%;
+  text-align: right;
+}
+#icons a {
+  display: inline-block;
+  padding: 0 15px;
+  font-size: 1.3em;
+  color: #FFFAE1;
+}
+#icons a:hover {
+  transform: scale(1.5);
+  transition: 0.1s;
+}
+
+
+
+/* it for the h1 hide in the html  */
+/* h1, a {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+span {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  white-space: nowrap;
+} */
