@@ -6,42 +6,97 @@ html {
   scroll-behavior: smooth;
 }
 
+
 body {
   font-family: 'Advent Pro', sans-serif;
   background-color: #FFFAE1;
   padding: 0%;
   margin: 0%;
+  height: 1.2em;
+}
+
+.bar-graph-horizontal {
+  max-width: 380px;
+  color-interpolation-filters: linearRGB;
+  
+}
+
+.bar-graph-horizontal > div {
+  float: right;
+  margin: 8px;
+  width: 100%;
+}
+
+.bar-graph-horizontal .numbers {
+  color: #fff;
+  margin-bottom: auto;
+  width: 50px;
+  float: left;
+  display: list-item;
+}
+
+.numbers li{
+  list-style: none;
+  position: relative;
+  display: table-cell;
+  position: relative;
+}
+.numbers span{
+margin: 8em;
+float: relative;
+display: flex;
+}
+.bar-graph-horizontal .options {
+  color: yellow;
+  margin-top: 25;
+  width: 100px;
+  height: 100%;
+  display: flow-root;
+}
+
+.options li{
+  list-style: none;
+  height: 75px;
+  position: relative;
+  bottom: 45px;
+  display: flow-root;
 }
 ul {
   list-style-type: none;
   padding: 5;
   display: flex;
-  
 }
 header li {
-  float: left;
+  float: right;
   /* font-size: 1.2em;  pour que la taille s'adapte a l'ecran d'affichage */
   font-size: 1.2em;
 }
 /* here I have a issue to change the #contact place  */
-#contact {
-  float: right;
-  padding: 0 15px;
+header, li, #contact {
+  font-family: 'Advent pro', cursive;
+  font-weight: bold;
+  margin: 1.2em auto;
+  float: relative;
 }
 
 
-/* ********** NAV BAR ************ */
+/* =====  NAV BAR ===== */
 
 #deuxiemeTrait {
   height: 10px;
   width: 75%;
   background-color: #FFFAE1;
-  margin: 60px auto;
+  margin: auto;
+  padding: 0 2%;
+  display: flex;
+  margin-bottom: 0ex;
+
 }
 #copyrightEtIcons {
   display: flex;
   margin-bottom: 40px;
   padding: 0 10%;
+
 }
 #copyright {
   width: 50%;
@@ -63,19 +118,3 @@ header li {
   transition: 0.1s;
 }
 
-
-
-/* it for the h1 hide in the html  */
-/* h1, a {
-  display: inline-block;
-  overflow: hidden;
-  position: relative;
-}
-span {
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-  white-space: nowrap;
-} */
