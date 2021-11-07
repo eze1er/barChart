@@ -9,16 +9,40 @@ html {
 
 body {
   font-family: 'Advent Pro', sans-serif;
-  background-color: #FFFAE1;
+  background-color: #f5f6fa2a;
   padding: 0%;
   margin: 0%;
   height: 1.2em;
+  font-size: larger;
+
+}
+
+ul {
+  list-style-type: none;
+  padding: 5;
+  display: flex;
+
+
+}
+
+header li {
+  float: right;
+  /* font-size: 1.2em;  pour que la taille s'adapte a l'ecran d'affichage */
+  font-size: 1.2em;
+
+}
+/* here I have a issue to change the #contact place  */
+header, li, #contact {
+  font-family: 'Advent pro', cursive;
+  font-weight: bold;
+  margin: 1.2em auto;
+  float: relative;
 }
 
 .bar-graph-horizontal {
   max-width: 380px;
   color-interpolation-filters: linearRGB;
-  
+
 }
 
 .bar-graph-horizontal > div {
@@ -28,11 +52,13 @@ body {
 }
 
 .bar-graph-horizontal .numbers {
-  color: #fff;
+  color:#2e86de;
   margin-bottom: auto;
   width: 50px;
   float: left;
   display: list-item;
+  position: absolute;
+  bottom: 0;
 }
 
 .numbers li{
@@ -47,8 +73,8 @@ float: relative;
 display: flex;
 }
 .bar-graph-horizontal .options {
-  color: yellow;
-  margin-top: 25;
+  color: #2e86de;
+  margin-top: auto;
   width: 100px;
   height: 100%;
   display: flow-root;
@@ -56,28 +82,23 @@ display: flex;
 
 .options li{
   list-style: none;
-  height: 75px;
-  position: relative;
-  bottom: 45px;
+  height: 52px;
+  position: -webkit-sticky;
+  bottom: auto;
   display: flow-root;
 }
-ul {
-  list-style-type: none;
-  padding: 5;
-  display: flex;
+
+#titleDisplay {
+  /* height: 55px; */
+  /* font-size: 155; */
+  position: absolute;
+  margin: 40px;
+  padding-bottom: 1.2em;
+  color: aquamarine;
+  display: inline-flex;
+
 }
-header li {
-  float: right;
-  /* font-size: 1.2em;  pour que la taille s'adapte a l'ecran d'affichage */
-  font-size: 1.2em;
-}
-/* here I have a issue to change the #contact place  */
-header, li, #contact {
-  font-family: 'Advent pro', cursive;
-  font-weight: bold;
-  margin: 1.2em auto;
-  float: relative;
-}
+/* ****** ***** ***** */
 
 
 /* =====  NAV BAR ===== */
@@ -85,11 +106,12 @@ header, li, #contact {
 #deuxiemeTrait {
   height: 10px;
   width: 75%;
-  background-color: #FFFAE1;
+  background-color: aqua;
   margin: auto;
   padding: 0 2%;
   display: flex;
   margin-bottom: 0ex;
+
 
 }
 #copyrightEtIcons {
