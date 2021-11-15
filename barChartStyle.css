@@ -6,119 +6,101 @@ html {
   scroll-behavior: smooth;
 }
 
-
-body {
+ body {
   font-family: 'Advent Pro', sans-serif;
   background-color: #f5f6fa2a;
   padding: 0%;
   margin: 0%;
   height: 1.2em;
   font-size: larger;
-
 }
-
 ul {
   list-style-type: none;
   padding: 5;
   display: flex;
-
-
 }
-
 header li {
   float: right;
-  /* font-size: 1.2em;  pour que la taille s'adapte a l'ecran d'affichage */
   font-size: 1.2em;
-
 }
-/* here I have a issue to change the #contact place  */
 header, li, #contact {
   font-family: 'Advent pro', cursive;
   font-weight: bold;
   margin: 1.2em auto;
   float: relative;
 }
-
-.bar-graph-horizontal {
-  max-width: 380px;
-  color-interpolation-filters: linearRGB;
-
+h3, .a {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  /* margin-left: 9; */
+  float: relative;
+  background-color: aqua;
+  outline-color: aqua;
 }
-
-.bar-graph-horizontal > div {
-  float: right;
-  margin: 8px;
-  width: 100%;
-}
-
-.bar-graph-horizontal .numbers {
-  color:#2e86de;
-  margin-bottom: auto;
-  width: 50px;
-  float: left;
-  display: list-item;
-  position: absolute;
-  bottom: 0;
-}
-
-.numbers li{
-  list-style: none;
-  position: relative;
-  display: table-cell;
-  position: relative;
-}
-.numbers span{
-margin: 8em;
-float: relative;
-display: flex;
-}
-.bar-graph-horizontal .options {
-  color: #2e86de;
-  margin-top: auto;
-  width: 100px;
-  height: 100%;
-  display: flow-root;
-}
-
-.options li{
-  list-style: none;
-  height: 52px;
-  position: -webkit-sticky;
-  bottom: auto;
-  display: flow-root;
-}
-
 #titleDisplay {
+  text-transform: uppercase;
   margin-left: auto;
   margin-right: auto;
-  color: black;
+  /* padding-top: 55px; */
+  color: rgba(10, 124, 218, 0.918);
+  font-size: 2em;
 }
-/* ****** ***** ***** */
-
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  }
+.chartMenu {
+  width: 200vw;
+  height: 40px;
+  background: #1A1A1A;
+  color: rgba(255, 26, 104, 1);
+}
+.chartMenu p {
+  padding: 10px;
+  font-size: 20px;
+}
+.chartCard {
+  width: 100vw;
+  height: calc(100vh - 40px);
+  background: rgba(10, 124, 218, 0.918);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chartBox {
+  width: 700px;
+  height: auto;
+  padding: 20px;
+  border-radius: 20px;
+  border: solid 3px rgb(255, 26, 26);
+  background: white;
+}
+div#chartNew.chartBox {
+  font-family: 'Courier New' sans-serif;
+  color: #df0c0c;
+}
 
 /* =====  NAV BAR ===== */
 
-#deuxiemeTrait {
+#bottomLine {
   height: 10px;
   width: 75%;
-  background-color: aqua;
+  background-color: rgb(10, 66, 219);
   margin: auto;
   padding: 0 2%;
   display: flex;
   margin-bottom: 0ex;
-
-
 }
 #copyrightEtIcons {
   display: flex;
   margin-bottom: 40px;
   padding: 0 10%;
-
 }
 #copyright {
   width: 50%;
   text-align: left;
-  color: #FFFAE1;
+  color: #f00927;
 }
 #icons {
   width: 50%;
@@ -128,7 +110,7 @@ display: flex;
   display: inline-block;
   padding: 0 15px;
   font-size: 1.3em;
-  color: #FFFAE1;
+  color: #df0c0c;
 }
 #icons a:hover {
   transform: scale(1.5);

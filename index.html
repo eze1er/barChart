@@ -5,141 +5,181 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Chart bart fo other developer</title>
+  <title>Bar Chart for developer</title>
+
   <link rel="stylesheet" href="barChartStyle.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-
-<!-- <script>
-  var $x = jQuery.noConflict();
-  alert("Version: "+$x.fn.jquery);
-</script> -->
-
-
 </head>
 
 <body style="background-color: rgb(233, 230, 225);">
   <header>
-    <nav class="navbar navbar-default">
-
+    <div id="charMenu" class="charMenu"></div>
+    <div>
       <ul style="background-color: #0abde3;">
         <li id="logo"><a href="#lighthouse-logo.png"><img src="lighthouse-logo.png" height="80" alt="Lighthouse-log"></a></li>
 
-        <li><a href="#charTitle">Title of your char bart</a><input id="charTitle" type="text" placeholder="Your Chart bart"><button onclick="myFunction()">Submit</button></li>
+        <li><a id="#charTitle">Bar Chart title</a> <input id="charTitle" type="text" placeholder="Your Chart title" style="font-size: 14pt;"> <button onclick="myFunction1()">Submit</button></li>
 
-        <li><a href="#contact">contact</a></li>
-        <!-- <button id="btn5">submit</button> -->
-      <!-- </ul>
-      <ul> -->
-        <li><a href="#options">Options</a><input type="text" placeholder="different options"><button onclick="myFunction()">Submit</button></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <ul>
-        <p id="titleDisplay"></p>
-      </ul>
-    </nav>
+      <div>
+        <ul>
+          <li><a id="#options">Options </a><input id="option" type="text" placeholder="different options" style="font-size: 14pt;"><button onclick="myFunction2()">Enter</button></li>
 
-   </header>
-  <div id="container" style="width: 100%; height: 100%"></div>
-  <p id="title"></p>
-  <!-- The container we have created will be a container for a chart. You will set other values for the width and height parameters. -->
+          <li><a id="#quantity">Quantity </a><input id="quantity" type="number" style="font-size: 14pt;"><button onclick="myFunction3()">Enter</button></li>
 
+          <li><button onclick="myFunction7()">Submit</button></li>
+          <li><button class="btn btn-success" onclick="updateChart()">Update Chart</button></li>
 
-  <!-- <input type="text" id="myText" value="Some text...">
+          <li><button class="btn btn-success" onclick="refreshChart()">Refresh Chart</button></li>
 
-  <p>Click the "Try it" button to get the text in the text field.</p>
+        </ul>
+        <div>
+          <ul>
+            <p id="titleDisplay"></p>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="chartCard">
+      <div id="chartNew" class="chartBox">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+  </header>
 
-  <! <button onclick="myFunction()">Try it</button> -->
-  <!-- <button onclick="myFunction()">Try it</button>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <p id="demo"></p>
-
-  <script>
-    function myFunction() {
-      var x = document.getElementById("myText").value;
-      document.getElementById("demo").innerHTML = x;
-    }
-    </script> -->
   <script>
     let newTitle = '';
+    let newOptions = [];
+    let newValue = [];
+    let percentage = [];
+    let totQt = 0; // total quantity for this char
+    let key1 = ''; // option just received
+    let value = ''; // the value just received
 
+$(document).ready(function(){
+  $('input').focus(function(){
+    $(this).css('background', 'yellow');
+      });
+    $('input').blur(function(){
+      $(this).css('background', 'white');
+    });
+  });
 
-// $(function() {
-//     $( "p" ).text( "The DOM is now loaded and can be manipulated." );
-
-// });
-
-// $(document).ready(function() {
-
-//       // we have the input for the new char title.
-//       this.value = false;
-//       $( "input[type='text']" ).on( "blur", function() {
-//         if( !this.value ) {
-//           alert( "Please enter some text!" )
-//         }
-//         else
-//  //       alert('this is the input  '+this.value)
-//          newTitle = this.value
-//          title = newTitle
-//          alert('this the new title  '+newTitle)
-
-
-
-
-//          return newTitle
-//       });
-
-// });
-
-function myFunction() {
+function myFunction1() {
         newTitle = document.getElementById("charTitle").value;
            document.getElementById("titleDisplay").innerHTML = newTitle;
+           return newTitle
 }
-// function function1() {
-//   var ul = document.getElementById("list");
-//   var li = document.createElement("li");
-//   li.appendChild(document.createTextNode("Four"));
-//   ul.appendChild(li);
-// }
-  </script>
-  <script>
-//    alert('this is the new title  ');
-//    alert(newTitle);
 
+function myFunction2() {
+    let newOption = document.getElementById("option").value;
+        key1 = newOption
+        newOptions.push(key1);
+        return key1
+}
 
-  </script>
+function myFunction3() {
+  let newQt = document.getElementById("quantity").value;
+      totQt = +totQt + +newQt;
+      value = +newQt;
+      newValue.push(value);
+}
 
-  <section class="bar-graph-horizontal bar-graph-one">
-    <div>
-      <ul class="numbers">
-        <li><span>0%</span></li>
-        <li><span>50%</span></li>
-        <li><span>100%</span></li>
-      </ul>
-      <ul class="options">
-        <li><span>option 06</span></li>
-        <li><span>option 05</span></li>
-        <li><span>option 04</span></li>
-        <li><span>option 03</span></li>
-        <li><span>option 02</span></li>
-        <li><span>option 01</span></li>
-      </ul>
-    </div>
-  </section>
+function updateChart(){
+   $('#chartNew').empty();
+   $('#chartNew').html('<canvas id="myChart"></canvas>');
+}
 
+function refreshChart(){
+  $('#chartNew').empty();
+  $('#titleDisplay').empty();
+  $('#chartNew').html('<canvas id="myChart"></canvas>');
+  newTitle = '';
+  newOptions = [];
+  newValue = [];
+  totQt = 0;
+}
+
+function myFunction7() {
+      percentage.length = 0;
+  for (let i = 0; i <= newValue.length; i++) {
+    const result = Math.round((newValue[i] / totQt) * 100);
+    percentage.push(result);
+  }
+
+  const data = {
+      labels: newOptions,
+      datasets: [{
+        label: newTitle,
+        data: percentage,
+        backgroundColor: [
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+        ],
+        borderColor: [
+        getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+          getRandomColorHex(),
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // config
+    const config = {
+      type: 'bar',
+      data,
+      options: {
+        indexAxis: 'y', // just this indexAxis x or y
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+    // function for random color
+    function getRandomColorHex() {
+    let hex = "0123456789ABCDEF",
+        color = "#";
+    for (let i = 1; i <= 6; i++) {
+      color += hex[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+}
+</script>
 </body>
-
 <footer>
-  <div id="deuxiemeTrait"></div>
+  <div id="bottomLine"></div>
     <div id="copyrightEtIcons">
       <div id="copyright">
         <span>&#169 Ezechiel Itimbien(papaezechiel@gmail.com); 2021</span>
       </div>
   <div id="icons">
     <a href="http://www.twitter.com"><i class="fa fa-twitter"></i></a>
-    <a href="http://www.facebook.fr"><i class="fa fa-facebook"></i></a>
+    <a href="http://www.facebook.ca"><i class="fa fa-facebook"></i></a>
     <a href="http://www.instagram.com"><i class="fa fa-instagram"></i></a>
-
   </div>
 </div>
 </footer>
